@@ -57,3 +57,7 @@ func GetRandomString(lenght int) string {
 	}
 	return string(result)
 }
+// bool 转 string
+func BoolToString(arg bool) string {
+	return  strconv.FormatBool(arg)
+}
