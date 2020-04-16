@@ -14,10 +14,16 @@ func DownFile(url string, localFile string)  {
 	if err != nil {
 		panic(err)
 	}
+
+	defer res.Body.Close()
+
 	f, err := os.Create(localFile)
 	if err != nil {
 		panic(err)
 	}
+
+	defer f.Close()
+
 	io.Copy(f, res.Body)
 }
 
@@ -39,3 +45,4 @@ func GetFileMd5Sum(filePath string) string {
 
 	return fmt.Sprintf("%x", md5hash.Sum(nil))
 }
+
