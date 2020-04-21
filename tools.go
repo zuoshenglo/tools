@@ -62,3 +62,13 @@ func GetRandomString(lenght int) string {
 func BoolToString(arg bool) string {
 	return  strconv.FormatBool(arg)
 }
+
+// string to float64
+
+func StringToFloat64(arg string) float64 {
+	float, err := strconv.ParseFloat(arg,64)
+	if err != nil {
+		panic(err)
+	}
+	return float
+}
