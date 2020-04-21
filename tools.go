@@ -72,3 +72,10 @@ func StringToFloat64(arg string) float64 {
 	}
 	return float
 }
+func StringToInt64(arg string) int64 {
+	int64, err := strconv.ParseInt(arg, 10, 64)
+	if err != nil {
+		panic(err)
+	}
+	return int64
+}
