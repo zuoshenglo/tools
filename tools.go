@@ -63,6 +63,15 @@ func BoolToString(arg bool) string {
 	return  strconv.FormatBool(arg)
 }
 
+// string to bool
+func StringToBool(string string) bool {
+	b, err := strconv.ParseBool(string)
+	if err != nil {
+		return false
+	}
+	return b
+}
+
 // string to float64
 
 func StringToFloat64(arg string) float64 {
