@@ -46,3 +46,11 @@ func GetFileMd5Sum(filePath string) string {
 	return fmt.Sprintf("%x", md5hash.Sum(nil))
 }
 
+// 写入文件内容, 文件不存在创建，存在清0，
+func WriteFle(context []byte)  {
+	file, _ := os.OpenFile("test2.txt", os.O_RDWR | os.O_TRUNC | os.O_CREATE, 0664)
+	defer file.Close()
+	count, _ := file.Write(context)
+	fmt.Println(count)
+	file.Sync()
+}
